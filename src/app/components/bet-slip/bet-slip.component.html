@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="card" style="border: none">
+        <div class="card-body justify-content-center">
+            <div class="col d-flex justify-content-center">
+                <div *ngFor='let ball of ballsChecked' [style.backgroundColor]='ball.color' class="circle">
+                    <span>{{ball.number}}</span>
+                </div>
+                <div *ngFor='let ball of [].constructor(8-ballsChecked.length)' class="circle">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5 mb-5">
+        <fieldset>
+            <div class="row">
+                <div class="col-7">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">{{ballsChecked.length}}x</span>
+                        <input type="number" min="1" [(ngModel)]="betInput" class="form-control" placeholder="$"
+                            aria-label="Username">
+                    </div>
+                </div>
+                <div class="col-5">
+                    <button class="btn btn-primary w-100" (click)='confirmBet(ballsChecked.length)'
+                        [disabled]="ballsChecked.length == 0 || betInput == 0" type="button">Ok</button>
+                </div>
+            </div>
+        </fieldset>
+
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-12 mt-2" style="text-align: center">
+            <h4>Total: {{bet}} €</h4>
+        </div>
+        <div class="col-12 mt-2">
+            <button [disabled]="bet <= 0 || ballsChecked.length == 0" *ngIf="betFinished == false" (click)='placeBet()'
+                class="btn btn-primary w-100 btn-lg" type="button">
+                Place bet
+            </button>
+        </div>
+        <div class="col-12 mt-2">
+            <button (click)="finishBet()" class="btn btn-success w-100 btn-lg" *ngIf="betFinished == true"
+                type="button">
+                New Bet
+            </button>
+        </div>
+    </div>
+</div>

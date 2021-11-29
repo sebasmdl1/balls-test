@@ -1,0 +1,32 @@
+.content {
+    margin: 60px 0px ;
+  }
+  
+.circle-container {
+    display: flex;
+    justify-content: center;
+    margin: 0px 10px 0px 0px;
+    align-items: center;
+  }
+  .horizontalGrid {
+    grid-template-columns: repeat(10, 1fr);
+    display: grid;
+  }
+  .circle {
+    display: flex;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+    color: var(--bs-white);
+    cursor: pointer;
+    font-size: 25px;
+  }
+  .circle-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
