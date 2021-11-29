@@ -1,16 +1,19 @@
 <div class="container">
     <ng-container>
         <h4>Numbers</h4>
-        <div class="horizontalGrid">
-            <div *ngFor="let ball of balls" class="circle-container">
-                <div class="circle" (click)="checkBall(ball)"
-                    [style.background]='ball.checked ? ball.color : ball.colorDefault'>
-                    <span style="color: black; font-size: 23px;">{{ball.number}}</span>
+        <div class="text-center">
+            <div class="horizontalGrid">
+                <div *ngFor="let ball of balls" class="circle-container">
+                    <div class="circle" (click)="checkBall(ball)"
+                        [style.background]='ball.checked ? ball.color : ball.colorDefault'>
+                        <span style="color: black; font-size: 23px;">{{ball.number}}</span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="d-flex justify-content-center mt-3">
-            <p style="cursor:pointer; color: steelblue" *ngIf="circleSelected" (click)="clearBet()">Clear selection</p>
+            <div class="d-flex justify-content-center mt-3">
+                <p style="cursor:pointer; color: steelblue" *ngIf="circleSelected" (click)="clearBet()">Clear selection
+                </p>
+            </div>
         </div>
     </ng-container>
     <ng-container>

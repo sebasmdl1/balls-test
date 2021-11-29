@@ -10,7 +10,8 @@
   }
   .horizontalGrid {
     grid-template-columns: repeat(10, 1fr);
-    display: grid;
+    display: inline-flex;
+    flex-wrap: wrap;
   }
   .circle {
     display: flex;
